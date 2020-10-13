@@ -1,0 +1,35 @@
+{
+  "name": "config-lgh",
+  "version": "0.0.1",
+  "scripts": {
+    "eslint": "node node_modules/eslint/bin/eslint.js *.json test/**/*.js",
+    "test": "npm run eslint && npm run test-unit",
+    "test-forms": "npm run eslint && mocha --reporter spec test/forms/**/*.spec.js --timeout 10000",
+    "test-tasks": "npm run eslint && mocha --reporter progress test/tasks/*.spec.js --timeout 10000",
+    "test-targets": "npm run eslint && mocha --reporter progress test/targets/*.spec.js --timeout 10000",
+    "test-unit": "mocha --recursive --reporter spec test --timeout 20000",
+    "travis": "npm run test-unit",
+    "compile-app-settings": "medic-conf compile-app-settings",
+    "convert-app-forms": "medic-conf convert-app-forms"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "eslint-plugin-json": "^2.1.1",
+    "medic": "^3.1.1",
+    "mocha": "^7.1.1",
+    "moment": "^2.24.0",
+    "rewire": "^5.0.0",
+    "sinon": "^9.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronna/config-lgh.git"
+  },
+  "devDependencies": {
+    "chai-exclude": "^2.0.2",
+    "chai-subset": "^1.6.0",
+    "medic-conf": "^3.2.1",
+    "medic-conf-test-harness": "^0.1.33",
+    "node-fetch": "^2.6.0"
+  }
+}
