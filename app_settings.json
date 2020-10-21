@@ -610,67 +610,11 @@
     }
   },
   "forms": {
-    "8": {
+    "hbc_registration": {
       "meta": {
-        "code": "8",
-        "translation_key": "form.8.title"
-      },
-      "fields": {},
-      "public_form": false,
-      "use_sentinel": true
-    },
-    "COVID_SYMPTOMS": {
-      "meta": {
-        "code": "COVID_SYMPTOMS",
-        "icon": "icon-risk",
-        "translation_key": "form.covid_symptoms.title"
-      },
-      "fields": {
-        "patient_id": {
-          "labels": {
-            "short": {
-              "translation_key": "patient_id"
-            },
-            "tiny": {
-              "en": "ID"
-            }
-          },
-          "position": 0,
-          "flags": {
-            "input_digits_only": true
-          },
-          "length": [
-            5,
-            13
-          ],
-          "type": "string",
-          "required": true
-        },
-        "notes": {
-          "labels": {
-            "short": {
-              "translation_key": "notes"
-            },
-            "tiny": {
-              "en": "n"
-            }
-          },
-          "position": 1,
-          "length": [
-            0,
-            200
-          ],
-          "type": "string",
-          "required": false
-        }
-      },
-      "use_sentinel": true
-    },
-    "QUARANTINE_FOLLOW_UP": {
-      "meta": {
-        "code": "QUARANTINE_FOLLOW_UP",
+        "code": "hbc_registration",
         "icon": "icon-follow-up",
-        "translation_key": "form.quarantine_follow_up.title"
+        "translation_key": "form.hbc_registration.title"
       },
       "fields": {
         "patient_id": {
@@ -693,13 +637,40 @@
           "type": "string",
           "required": true
         },
-        "symptoms_check": {
+        "general_followup": {
+          "meta": {
+            "code": "general_followup",
+            "icon": "icon-follow-up",
+            "translation_key": "form.general.followup.title"
+          },
+          "fields": {
+            "patient_id": {
+              "labels": {
+                "short": {
+                  "translation_key": "patient_id"
+                },
+                "tiny": {
+                  "en": "ID"
+                }
+              },
+              "position": 0,
+              "flags": {
+                "input_digits_only": true
+              },
+              "length": [
+                5,
+                13
+              ],
+              "type": "string",
+              "required": true
+            },
+        "hbc_followup": {
           "labels": {
             "short": {
-              "translation_key": "symptoms_check"
+              "translation_key": "form.hbc_followup.title"
             },
             "tiny": {
-              "en": "sym_check"
+              "en": "hbc_followup"
             }
           },
           "position": 1,
@@ -716,7 +687,7 @@
   },
   "registrations": [
     {
-      "form": "8",
+      "form": "hbc_registration",
       "events": [
         {
           "name": "on_create",
@@ -841,32 +812,7 @@
         }
       ]
     },
-    {
-      "form": "covid_rdt_followup",
-      "events": [
-        {
-          "name": "on_create",
-          "trigger": "clear_schedule",
-          "params": "signal_reminders_to_scdsc",
-          "bool_expr": ""
-        }
-      ],
-      "validations": {
-        "join_responses": true,
-        "list": [
-          {
-            "property": "patient_id",
-            "rule": "unique('form', 'patient_id')",
-            "translation_key": "messages.signal.investigation.validation.unique"
-          },
-          {
-            "property": "patient_id",
-            "rule": "exists('CHA_SIGNAL_VERIFICATION', 'patient_id')",
-            "translation_key": "messages.signal.investigation.validation.verification_exists"
-          }
-        ]
-      },
-      "messages": [
+    "messages": [
         {
           "translation_key": "messages.generic.registration_not_found",
           "event_type": "registration_not_found",
