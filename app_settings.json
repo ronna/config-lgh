@@ -707,8 +707,7 @@
 			"use_sentinel": true
 		}
 	},
-	"registrations": [{
-			"form": "hbc_registration",
+	"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
 					"trigger": "assign_schedule",
@@ -749,8 +748,7 @@
 				"translation_key": "messages.cha.signal.report_accepted",
 				"event_type": "report_accepted",
 				"recipient": "reporting_unit"
-			}]
-		},
+			},
 		{
 			"form": "hbc_followup",
 			"events": [{
