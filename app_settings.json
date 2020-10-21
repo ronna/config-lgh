@@ -707,7 +707,6 @@
 			"use_sentinel": true
 		}
 	},
-	{
 			"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
