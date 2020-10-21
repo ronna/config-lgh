@@ -711,7 +711,7 @@
 			"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
-					"trigger": "add_patient",
+					"trigger": "edit_patient",
 					"params": "",
 					"bool_expr": ""
 				},
@@ -739,7 +739,7 @@
 			"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
-					"trigger": "add_patient",
+					"trigger": "edit_patient",
 					"params": "",
 					"bool_expr": ""
 				},
