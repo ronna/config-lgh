@@ -711,12 +711,6 @@
 			"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
-					"trigger": "edit_patient",
-					"params": "",
-					"bool_expr": ""
-				},
-				{
-					"name": "on_create",
 					"trigger": "assign_schedule",
 					"params": "covid_signal_reminders_to_CHA",
 					"bool_expr": ""
@@ -738,12 +732,6 @@
 		{
 			"form": "hbc_registration",
 			"events": [{
-					"name": "on_create",
-					"trigger": "edit_patient",
-					"params": "",
-					"bool_expr": ""
-				},
-				{
 					"name": "on_create",
 					"trigger": "assign_schedule",
 					"params": "self_reported_signal_reminders_to_CHA",
