@@ -707,28 +707,7 @@
 			"use_sentinel": true
 		}
 	},
-	"form": "hbc_registration",
-			"events": [{
-					"name": "on_create",
-					"trigger": "assign_schedule",
-					"params": "covid_signal_reminders_to_CHA",
-					"bool_expr": ""
-				}
-			],
-			"validations": {},
-			"messages": [{
-					"translation_key": "messages.covid.signal.report_accepted",
-					"event_type": "report_accepted",
-					"recipient": "reporting_unit"
-				},
-				{
-					"translation_key": "messages.covid.signal.notification",
-					"event_type": "report_accepted",
-					"recipient": "parent"
-				}
-			]
-		},
-		{
+	{
 			"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
