@@ -807,19 +807,19 @@
           "name": "on_create",
           "trigger": "assign_schedule",
           "params": "signal_verification_notification_to_scdsc",
-          "bool_expr": "(doc.fields.signal_verification.among_cebs_signals && doc.fields.signal_verification.among_cebs_signals === 'Yes') && (doc.fields.signal_verification.signal_duplicate && doc.fields.signal_verification.signal_duplicate === 'No') && (doc.fields.signal_verification.threat_exists && doc.fields.signal_verification.threat_exists === 'Yes') && (!doc.fields.signal_verification.referred_to_animal_health || (doc.fields.signal_verification.referred_to_animal_health && doc.fields.signal_verification.referred_to_animal_health === 'No'))"
+          "bool_expr": ""
         },
         {
           "name": "on_create",
           "trigger": "assign_schedule",
           "params": "signal_verification_animal_notification_to_scdsc",
-          "bool_expr": "(doc.fields.signal_verification.among_cebs_signals && doc.fields.signal_verification.among_cebs_signals === 'Yes') && (doc.fields.signal_verification.signal_duplicate && doc.fields.signal_verification.signal_duplicate === 'No') && (doc.fields.signal_verification.threat_exists && doc.fields.signal_verification.threat_exists === 'Yes') && (doc.fields.signal_verification.referred_to_animal_health && doc.fields.signal_verification.referred_to_animal_health === 'Yes')"
+          "bool_expr": ""
         },
         {
           "name": "on_create",
           "trigger": "assign_schedule",
           "params": "signal_reminders_to_scdsc",
-          "bool_expr": "(doc.fields.signal_verification.among_cebs_signals && doc.fields.signal_verification.among_cebs_signals === 'Yes') && (doc.fields.signal_verification.signal_duplicate && doc.fields.signal_verification.signal_duplicate === 'No') && (doc.fields.signal_verification.threat_exists && doc.fields.signal_verification.threat_exists === 'Yes')"
+          "bool_expr": ""
         }
       ],
       "validations": {
