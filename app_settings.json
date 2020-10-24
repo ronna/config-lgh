@@ -603,7 +603,111 @@
 		}
 	},
 	"forms": {
-			"hbc_registration",
+		"8": {
+			"meta": {
+				"code": "8",
+				"translation_key": "form.8.title"
+			},
+			"fields": {},
+			"public_form": false,
+			"use_sentinel": true
+		},
+		"COVID_SYMPTOMS": {
+			"meta": {
+				"code": "COVID_SYMPTOMS",
+				"icon": "icon-risk",
+				"translation_key": "form.covid_symptoms.title"
+			},
+			"fields": {
+				"patient_id": {
+					"labels": {
+						"short": {
+							"translation_key": "patient_id"
+						},
+						"tiny": {
+							"en": "ID"
+						}
+					},
+					"position": 0,
+					"flags": {
+						"input_digits_only": true
+					},
+					"length": [
+						5,
+						13
+					],
+					"type": "string",
+					"required": true
+				},
+				"notes": {
+					"labels": {
+						"short": {
+							"translation_key": "notes"
+						},
+						"tiny": {
+							"en": "n"
+						}
+					},
+					"position": 1,
+					"length": [
+						0,
+						200
+					],
+					"type": "string",
+					"required": false
+				}
+			},
+			"use_sentinel": true
+		},
+		"QUARANTINE_FOLLOW_UP": {
+			"meta": {
+				"code": "QUARANTINE_FOLLOW_UP",
+				"icon": "icon-follow-up",
+				"translation_key": "form.quarantine_follow_up.title"
+			},
+			"fields": {
+				"patient_id": {
+					"labels": {
+						"short": {
+							"translation_key": "patient_id"
+						},
+						"tiny": {
+							"en": "ID"
+						}
+					},
+					"position": 0,
+					"flags": {
+						"input_digits_only": true
+					},
+					"length": [
+						5,
+						13
+					],
+					"type": "string",
+					"required": true
+				},
+				"symptoms_check": {
+					"labels": {
+						"short": {
+							"translation_key": "symptoms_check"
+						},
+						"tiny": {
+							"en": "sym_check"
+						}
+					},
+					"position": 1,
+					"length": [
+						0,
+						2
+					],
+					"type": "string",
+					"required": false
+				}
+			},
+			"use_sentinel": true
+		}
+	},
+			"form": "hbc_registration",
 			"events": [{
 					"name": "on_create",
 					"trigger": "assign_schedule",
@@ -705,28 +809,6 @@
 					}
 				]
 			},
-			{
-				"form": "form_a0",
-				"events": [{
-					"name": "on_create",
-					"trigger": "clear_schedule",
-					"params": "signal_reminders_to_scdsc",
-					"bool_expr": ""
-				}],
-				"validations": {
-					"join_responses": true,
-					"list": [{
-							"property": "patient_id",
-							"rule": "unique('form', 'patient_id')",
-							"translation_key": "messages.signal.investigation.validation.unique"
-						},
-						{
-							"property": "patient_id",
-							"rule": "exists('CHA_SIGNAL_VERIFICATION', 'patient_id')",
-							"translation_key": "messages.signal.investigation.validation.verification_exists"
-						}
-					]
-				},
 			"messages": [{
 				"translation_key": "messages.generic.registration_not_found",
 				"event_type": "registration_not_found",
