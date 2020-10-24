@@ -777,7 +777,7 @@
       ]
     },
     {
-      "form": "form_a0",
+      "form": "general_followup",
       "events": [
         {
           "name": "on_create",
@@ -785,24 +785,8 @@
           "params": "signal_reminders_to_CHA",
           "bool_expr": ""
         },
-        {
-          "name": "on_create",
-          "trigger": "clear_schedule",
-          "params": "self_reported_signal_reminders_to_CHA",
-          "bool_expr": ""
-        },
-        {
-          "name": "on_create",
-          "trigger": "clear_schedule",
-          "params": "covid_signal_reminders_to_CHA",
-          "bool_expr": ""
-        },
-        {
-          "name": "on_create",
-          "trigger": "clear_schedule",
-          "params": "covid_self_reported_signal_reminders_to_CHA",
-          "bool_expr": ""
-        },
+
+
         {
           "name": "on_create",
           "trigger": "assign_schedule",
@@ -842,7 +826,7 @@
       ]
     },
     {
-      "form": "general_followup",
+      "form": "form_a0",
       "events": [
         {
           "name": "on_create",
