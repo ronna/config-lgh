@@ -1,7 +1,6 @@
 const extras = require('./nools-extras');
 
-// Set this to 1 to display tasks early.
-const debug_early = 0;
+// const debug_early = 0;
 
 /**
  * Helper to create a task for a question set that triggers an HW task.
@@ -13,7 +12,9 @@ const debug_early = 0;
  * @param {function} appliiesIf: the function to determine if this should apply
  * @param {Object} options: other options to include
  */
-function buildQsTask(name, hwForm, daysDue, priority, appliesIf, options) {
+
+/**
+  function buildQsTask(name, hwForm, daysDue, priority, appliesIf, options) {
   var defOpt = {
     icon: options && 'icon' in options ? options.icon : 'icon-follow-up',
     title: options && 'title' in options ? options.title : name,
@@ -60,8 +61,9 @@ function buildQsTask(name, hwForm, daysDue, priority, appliesIf, options) {
       },
     ],
   };
-}
+} **/
 
+/****
 function buildResolvedIfLaterReportExists(formName) {
   return (contact, report) => {
     const latestReport =
@@ -69,6 +71,7 @@ function buildResolvedIfLaterReportExists(formName) {
     return latestReport && latestReport.reported_date > report.reported_date;
   };
 }
+ ****/
 
 module.exports = [
   /****
