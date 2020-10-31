@@ -777,6 +777,99 @@
       ]
     },
     {
+      "form": "death_report",
+      "events": [
+        {
+          "name": "on_create",
+          "trigger": "add_patient",
+          "params": "",
+          "bool_expr": ""
+        },
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "self_reported_signal_reminders_to_CHA",
+          "bool_expr": "doc.fields.signal_type && doc.fields.signal_type != '8'"
+        },
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "covid_self_reported_signal_reminders_to_CHA",
+          "bool_expr": "doc.fields.signal_type && doc.fields.signal_type == '8'"
+        }
+      ],
+      "validations": {},
+      "messages": [
+        {
+          "translation_key": "messages.cha.signal.report_accepted",
+          "event_type": "report_accepted",
+          "recipient": "reporting_unit"
+        }
+      ]
+    },
+    {
+      "form": "undo_death_report",
+      "events": [
+        {
+          "name": "on_create",
+          "trigger": "add_patient",
+          "params": "",
+          "bool_expr": ""
+        },
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "self_reported_signal_reminders_to_CHA",
+          "bool_expr": "doc.fields.signal_type && doc.fields.signal_type != '8'"
+        },
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "covid_self_reported_signal_reminders_to_CHA",
+          "bool_expr": "doc.fields.signal_type && doc.fields.signal_type == '8'"
+        }
+      ],
+      "validations": {},
+      "messages": [
+        {
+          "translation_key": "messages.cha.signal.report_accepted",
+          "event_type": "report_accepted",
+          "recipient": "reporting_unit"
+        }
+      ]
+    },
+    {
+      "form": "outcome_report",
+      "events": [
+        {
+          "name": "on_create",
+          "trigger": "add_patient",
+          "params": "",
+          "bool_expr": ""
+        },
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "self_reported_signal_reminders_to_CHA",
+          "bool_expr": "doc.fields.signal_type && doc.fields.signal_type != '8'"
+        },
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "covid_self_reported_signal_reminders_to_CHA",
+          "bool_expr": "doc.fields.signal_type && doc.fields.signal_type == '8'"
+        }
+      ],
+      "validations": {},
+      "messages": [
+        {
+          "translation_key": "messages.cha.signal.report_accepted",
+          "event_type": "report_accepted",
+          "recipient": "reporting_unit"
+        }
+      ]
+    },
+    {
       "form": "general_followup",
       "events": [
         {
