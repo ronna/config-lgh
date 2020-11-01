@@ -9,7 +9,7 @@ const getField = (report, fieldPath) => [...(fieldPath || '').split('.')]
       return prev[fieldName];
     }, report);
 
-const isCovidPatient = () => { return getField(thisContact, 'role') === 'covid_patient'; };
+const isPatient = () => { return getField(thisContact, 'role') === 'covid_patient'; };
 
 const isReportValid = function (report) {
   if (report.form && report.fields && report.reported_date) { return true; }
@@ -21,7 +21,7 @@ const hasReport = function (form) {
 };
 
 const context = {
-  isPatient: isCovidPatient(),
+  //isPatient: isCovidPatient(),
   hasOutcomeForm: hasReport('outcome_report'),
   hasQuarantineForm: hasReport('form_a0'),
 };
@@ -54,7 +54,7 @@ const cards = [
       const fields = [];
       const report = getNewestReport(allReports, 'form_a0');
       //const temp_infra_unit = getField(report, 'fields.temp_infra_unit');
-      const days_symptoms_onset = getField(report, 'fields.days_since_symptoms_onset');
+      //const days_symptoms_onset = getField(report, 'fields.days_since_symptoms_onset');
       //const temp_infra_unit_text = temp_infra_unit === 'celsius' ? '°C' : temp_infra_unit === 'fahrenheit' ? '°F' : '';
       //const temp_clinical_unit_text = temp_clinical_unit === 'celsius' ? '°C' : temp_clinical_unit === 'fahrenheit' ? '°F' : '';
       if (report) {
