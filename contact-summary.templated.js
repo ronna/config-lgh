@@ -1,10 +1,10 @@
-const moment = require('moment');
+//const moment = require('moment');
 const extras = require('./contact-summary-extras');
-const { today, isHighRiskPatient, getNewestReport, getSubsequentHbcFollowUps,
+/**const { today, isHighRiskPatient, getNewestReport, getSubsequentHbcFollowUps,
   isAlive, isReadyForDiscahrge, isActiveCovid19, countHbcFollowupVisits,
   getAllRiskFactors, getLatestDangerSigns, getNextHbcVisitDate,
   getFormArraySubmittedInWindow,
-  getAllRiskFactorExtra, getField } = extras;
+  getAllRiskFactorExtra, getField } = extras; */
 
 //contact, reports, lineage are globally available for contact-summary
 const thisContact = contact;
