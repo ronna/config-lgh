@@ -62,8 +62,7 @@ const cards = [
             //{ label: 'contact.profile.referral.temp_ir', value: getField(report, 'fields.temp_infra') + temp_infra_unit_text, width: 6 },
             //{ label: 'contact.profile.referral.temp_clinical', value: getField(report, 'fields.temp_clinical') + temp_clinical_unit_text, width: 6 },
             { label: 'Days since symptoms onset', value:  getField(report, 'fields.days_since_symptoms_onset'), translate: true, width: 6 },
-            { label: '', icon: 'icon-risk', width: 6 }
-        );
+          );
       }
 
       return fields;
