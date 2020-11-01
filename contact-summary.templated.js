@@ -45,7 +45,7 @@ const fields = [
 
 const cards = [
   {
-    label: 'contact.profile.form_a0',
+    label: 'contact.profile.symptom.details',
     appliesToType: 'person',
     appliesIf: function () {
       return isPatient() && !!getNewestReport(allReports, 'form_a0');
@@ -61,8 +61,8 @@ const cards = [
         fields.push(
             //{ label: 'contact.profile.referral.temp_ir', value: getField(report, 'fields.temp_infra') + temp_infra_unit_text, width: 6 },
             //{ label: 'contact.profile.referral.temp_clinical', value: getField(report, 'fields.temp_clinical') + temp_clinical_unit_text, width: 6 },
-            { label: 'contact.profile.days_symptoms_onset', value:  getField(report, 'fields.days_since_symptoms_onse'), translate: true, width: 6 },
-            { label: '', icon: 'icon-risk', width: 6 }
+            { label: 'contact.profile.days_symptoms_onset', value:  getField(report, 'fields.days_since_symptoms_onset'), translate: true, width: 6 },
+            //{ label: '', icon: 'icon-risk', width: 6 }
         );
       }
 
@@ -71,7 +71,7 @@ const cards = [
   },
 
   {
-    label: 'contact.profile.outcome_report',
+    label: 'contact.profile.outcome.report',
     appliesToType: 'person',
     appliesIf: isPatient,
     fields: function () {
@@ -86,7 +86,7 @@ const cards = [
           );
       }
       else {
-        fields.push({ label: 'contact.profile.outcome_report.none' });
+        fields.push({ label: 'contact.profile.outcome.report.none' });
       }
 
       return fields;
@@ -94,14 +94,14 @@ const cards = [
   },
 
   {
-    label: 'contact.profile.declaration.form',
+    label: 'contact.profile.risk.factors',
     appliesToType: 'person',
     appliesIf: isPatient,
     fields: function () {
       const fields = [];
       const report = getNewestReport(allReports, 'form_a0');
       if (report) {
-        const contactRiskFactors = getRiskFactors(getField(report, 'fields.contact_confirmed_cases'));
+        const contactRiskFactors = getRiskFactors(getField(report, 'fields.human_exposure.contact_confirmed_cases'));
         const healthRiskFactors = getRiskFactors(getField(report, 'fields.existing_conditions'));
 
         if (contactRiskFactors && contactRiskFactors.length > 0) {
@@ -128,7 +128,7 @@ const cards = [
 
       }
       else {
-        fields.push({ label: 'contact.profile.declaration.form.none' });
+        fields.push({ label: 'contact.profile.risk.factors.none' });
       }
 
       return fields;
