@@ -83,8 +83,7 @@ const cards = [
             { label: 'contact.profile.outcome.health_outcome', value: getField(report, 'fields.health_outcome'), width: 4 },
             { label: 'contact.profile.outcome.date_outcome', value: getField(report, 'fields.isolation_details.outcome_date_of_outcome'), filter: 'simpleDate', width: 4 },
             { label: 'contact.profile.outcome.outcome_lab_result', value: getField(report, 'fields.outcome_lab_result'), width: 4 }
-          }
-        );
+          );
       }
       else {
         fields.push({ label: 'contact.profile.outcome_report.none' });
