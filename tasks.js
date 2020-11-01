@@ -83,7 +83,7 @@ module.exports = [
   {
     name: 'covid-followup',
     icon: 'icon-healthcare',
-    title: 'task.covid_followup.title',
+    title: 'Home Based Care Daily Followup',
     appliesTo: 'contacts',
     appliesToType: ['person'],
     appliesIf: function (c) {
@@ -96,7 +96,7 @@ module.exports = [
       const endTime = Utils.addDate(event.dueDate(c, r), event.end + 1);
 
       const reportsAfterRdt = c.reports.filter(report => report.reported_date >= this.mostRecentCasestatus.reported_date);
-      return Utils.isFormSubmittedInWindow(reportsAfterRdt, 'covid_rdt_followup', startTime, endTime);
+      return Utils.isFormSubmittedInWindow(reportsAfterRdt, 'outcome_report', startTime, endTime);
     },
     events: [{
       start: 1,
@@ -108,7 +108,7 @@ module.exports = [
     actions: [{
       type: 'contacts',
       form: 'hbc_followup',
-      label: 'task.covid_followup.title',
+      label: 'Home Based Care Daily Followup',
     }],
   },
 

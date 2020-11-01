@@ -45,7 +45,7 @@ const fields = [
 
 const cards = [
   {
-    label: 'contact.profile.symptom.details',
+    label: 'Symptom Details',
     appliesToType: 'person',
     appliesIf: function () {
       return isPatient() && !!getNewestReport(allReports, 'form_a0');
@@ -71,7 +71,7 @@ const cards = [
   },
 
   {
-    label: 'contact.profile.outcome.report',
+    label: 'Outcome Report',
     appliesToType: 'person',
     appliesIf: isPatient,
     fields: function () {
@@ -94,7 +94,7 @@ const cards = [
   },
 
   {
-    label: 'contact.profile.risk.factors',
+    label: 'Risk Factors',
     appliesToType: 'person',
     appliesIf: isPatient,
     fields: function () {
